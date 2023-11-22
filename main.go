@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"strings"
-	"cli-booking-tool/helper"
 )
 
 const conferenceTickets int = 50
@@ -17,7 +16,7 @@ func main() {
 	for {
 		firstName, lastName, email, userTickets := getUserInput()
 		
-		isValidName, isValidEmail, isValidTicketNumber := helper.ValidateUserInput(firstName, lastName, email, userTickets, remainingTickets)
+		isValidName, isValidEmail, isValidTicketNumber := validateUserInput(firstName, lastName, email, userTickets, remainingTickets)
 	
 		if isValidName && isValidEmail && isValidTicketNumber {
 			bookTicket(userTickets, firstName, lastName, email)
